@@ -69,6 +69,18 @@ apa.cor.table(my.data)
 
 range <- data.frame(gma = c(100), con = c(120))
 
-CI_data <- predict(my.regression,
-                   newdata = range, interval = "confidence", level = 0.95)
+CI_data <- predict(regression.1.con, newdata = range, interval = "confidence", level = 0.95)
+
+CI_data <- as.data.frame(cbind(range, CI_data))
+
+print(CI_data)
+
+
+#PREDICTION INTERVAL?
+
+PI_data <- predict(regression.1.con, newdata = range, interval = "prediction", level = 0.95)
+
+PI_data <- as.data.frame(cbind(range, PI_data))
+
+print(PI_data)
 
